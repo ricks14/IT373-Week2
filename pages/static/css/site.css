@@ -1,4 +1,4 @@
-/* Reset / base */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -16,51 +16,133 @@ body {
 }
 
 /* Navbar */
-nav {
+header {
     background: #333;
-    padding: 10px;
-    display: flex;
-    gap: 15px;
+    color: #fff;
 }
 
-    nav a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-        transition: color 0.2s ease;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffcc00; /* bright color so it doesn’t blend */
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+    .nav-links a:hover {
+        color: #ffcc00;
     }
 
-        nav a:hover {
-            color: #ffcc00;
-        }
-
-/* Container */
-main {
+/* Content area */
+.container {
     flex: 1;
-    padding: 20px;
+    padding: 40px;
+    max-width: 800px; /* wider container */
+    width: 90%; /* responsive */
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* Announcement List */
-ul {
+/* Headings spacing */
+h1, h2, h3 {
+    margin-bottom: 15px;
+}
+
+/* Paragraphs spacing */
+p {
+    margin-bottom: 15px;
+    color: #444;
+}
+
+/* Hero section (home) */
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+    .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+        color: #666;
+    }
+
+/* Features */
+.features h2 {
+    margin-bottom: 15px;
+}
+
+.features ul {
+    list-style: square;
+    margin: 10px 0 20px 20px;
+}
+
+/* Announcements */
+.announcement-list {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-li.announcement {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+.announcement {
+    background: #f4f4f4;
+    margin-bottom: 20px; /* extra spacing between items */
+    padding: 20px; /* more breathing room inside */
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+    .announcement h3 {
+        margin: 0;
+    }
 
 /* Buttons */
-button {
+.btn, button {
     background: #007bff;
     color: #fff;
     border: none;
     padding: 8px 14px;
     border-radius: 4px;
     cursor: pointer;
+    text-decoration: none;
     transition: background 0.2s ease;
 }
 
-    button:hover {
+    .btn:hover, button:hover {
         background: #0056b3;
+    }
+
+/* Footer */
+footer {
+    background: #333; /* colored bar */
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+    margin-top: auto; /* push footer down */
+}
+
+    footer p {
+        color: #ffcc00; /* footer text color */
+        margin: 0;
     }

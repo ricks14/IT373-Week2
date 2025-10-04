@@ -1,10 +1,26 @@
 {% extends "base.html" %}
-{% block title %}{{ title }}{% endblock title %}
+{% block title %}Home{% endblock %}
+
 {% block content %}
+<section class="hero">
     <h1>Welcome!</h1>
+    <p>This is your Django demo site styled with CSS.</p>
+</section>
+
+<section class="features">
+    <h2>Features</h2>
     <ul>
         {% for item in features %}
-            <li>{{ item }}</li>
+        <li>{{ item }}</li>
         {% endfor %}
     </ul>
-{% endblock content%}
+</section>
+
+<section>
+    <h2>About This Site</h2>
+    <p>
+        This website is a simple Django project that demonstrates how to
+        structure pages, style them with CSS, and manage announcements.
+    </p>
+</section>
+{% endblock %}

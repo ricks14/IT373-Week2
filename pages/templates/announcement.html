@@ -1,14 +1,17 @@
 {% extends "base.html" %}
-{% block title %}{{ title }}{% endblock title %}
+{% block title %}{{ announcement.title }}{% endblock %}
+
 {% block content %}
-<h1>{{ announcement.title }}</h1>
-<p id="announcement-text">
-    {{ announcement.content|truncatechars:50 }}
-    <span id="extra-text" style="display:none;">
-        {{ announcement.content }}
-    </span>
-</p>
-<button id="toggle-btn">Read more</button>
+<article class="announcement-detail">
+    <h1>{{ announcement.title }}</h1>
+    <p id="announcement-text">
+        {{ announcement.content|truncatechars:50 }}
+        <span id="extra-text" style="display:none;">
+            {{ announcement.content }}
+        </span>
+    </p>
+    <button id="toggle-btn" class="btn">Read more</button>
+</article>
 
 <script>
     const btn = document.getElementById("toggle-btn");
@@ -24,4 +27,4 @@
         }
     });
 </script>
-{% endblock content%}
+{% endblock %}

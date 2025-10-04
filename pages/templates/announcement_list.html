@@ -1,15 +1,16 @@
 {% extends "base.html" %}
-{% block title %}{{ title }}{% endblock title %}
+{% block title %}Announcements{% endblock %}
+
 {% block content %}
 <h1>Announcements</h1>
-<ul>
+<ul class="announcement-list">
     {% for a in announcements %}
     <li class="announcement">
-        <strong>{{ a.title }}</strong> -
-        <a href="{% url 'announcement' a.id %}">View Details</a>
+        <h3>{{ a.title }}</h3>
+        <a class="btn" href="{% url 'announcement' a.id %}">View Details</a>
     </li>
     {% empty %}
     <p>No announcements available.</p>
     {% endfor %}
 </ul>
-{% endblock content%}
+{% endblock %}
