@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock title %}
+{% block content %}
+<h1>{{ announcement.title }}</h1>
+<p id="announcement-text">
+    {{ announcement.content|truncatechars:50 }}
+    <span id="extra-text" style="display:none;">
+        {{ announcement.content }}
+    </span>
+</p>
+<button id="toggle-btn">Read more</button>
+
+<script>
+    const btn = document.getElementById("toggle-btn");
+    const extra = document.getElementById("extra-text");
+
+    btn.addEventListener("click", () => {
+        if (extra.style.display === "none") {
+            extra.style.display = "inline";
+            btn.textContent = "Show less";
+        } else {
+            extra.style.display = "none";
+            btn.textContent = "Read more";
+        }
+    });
+</script>
+{% endblock content%}
